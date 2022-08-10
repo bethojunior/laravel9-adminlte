@@ -2,6 +2,7 @@
 
 namespace App\Services\Notification;
 
+use App\Http\Requests\Notification\UpdateSmsRequest;
 use App\Repositories\SmsRepository\SmsRepository;
 use App\Models\Notification\Sms;
 
@@ -37,5 +38,10 @@ class SmsService
         return Sms::where('status',$params['status'])
             ->limit($params['limit'])
             ->get();
+    }
+
+    public function update(UpdateSmsRequest $request)
+    {
+
     }
 }
