@@ -1,7 +1,7 @@
-@extends('layouts.app')
+@extends('layouts.page')
 
 @section('content')
-<div class="container">
+<div class="container pt-2">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -13,8 +13,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    {{ __('You are logged in!') }}
+                    {{ auth()->user()->createToken('tokens')->plainTextToken  }}
                 </div>
             </div>
         </div>
